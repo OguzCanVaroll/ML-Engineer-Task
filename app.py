@@ -4,7 +4,6 @@ import consumer
 
 app = Flask(__name__)
 
-# Start the Kafka consumer in a separate thread
 threading.Thread(target=consumer.consume_messages, daemon=True).start()
 
 @app.route('/products', methods=['GET'])
