@@ -1,0 +1,9 @@
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY consumer.py requirements.consumer.txt ./
+
+RUN pip install --no-cache-dir -r requirements.consumer.txt
+
+CMD ["python", "consumer.py"]
